@@ -14,16 +14,18 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  // Defaults to true pre-mount, matching next-themes' defaultTheme="dark" —
+  // avoids ever rendering the button with no accessible text.
   const isDark = mounted ? theme === "dark" : true;
+  const label = isDark ? "Light" : "Dark";
 
   return (
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label="Toggle color theme"
       className="text-light-gray hover:text-light-gray-70 block px-1.5 py-1.5 text-[length:var(--fs-8)] transition-colors sm:text-[14px] lg:text-[15px]"
     >
-      {mounted ? (isDark ? "Light" : "Dark") : ""}
+      {label}
     </button>
   );
 }

@@ -16,7 +16,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       </Link>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="bg-muted text-light-gray-70 rounded-full px-3 py-1 text-[length:var(--fs-8)] uppercase">
+        <span className="bg-muted text-light-gray-70 border-border rounded-full border px-3 py-1 text-[length:var(--fs-8)] uppercase">
           {project.category}
         </span>
         {project.featured && (
@@ -117,7 +117,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-muted text-light-gray-70 rounded-full px-2.5 py-1 text-[length:var(--fs-8)]"
+                  className="bg-muted text-light-gray-70 border-border rounded-full border px-2.5 py-1 text-[length:var(--fs-8)]"
                 >
                   {tech}
                 </span>

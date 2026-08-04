@@ -37,7 +37,7 @@ export function ProjectCard({
           <h3>
             <Link
               href={detailHref}
-              className={`text-white-2 hover:text-primary font-medium transition-colors ${featured ? "text-[length:var(--fs-3)]" : "text-[length:var(--fs-4)]"}`}
+              className={`text-white-2 hover:text-vegas-gold font-medium transition-colors ${featured ? "text-[length:var(--fs-3)]" : "text-[length:var(--fs-4)]"}`}
             >
               {project.title}
             </Link>
@@ -51,7 +51,7 @@ export function ProjectCard({
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="bg-muted text-light-gray-70 rounded-full px-2.5 py-1 text-[length:var(--fs-8)]"
+              className="bg-muted text-light-gray-70 border-border rounded-full border px-2.5 py-1 text-[length:var(--fs-8)]"
             >
               {tech}
             </span>
@@ -64,7 +64,7 @@ export function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary inline-flex items-center gap-1.5 hover:underline"
+              className="text-vegas-gold inline-flex items-center gap-1.5 hover:underline"
             >
               <ExternalLink size={14} />
               Live site

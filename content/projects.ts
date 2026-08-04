@@ -110,6 +110,17 @@ export const projects: Project[] = [
     images: ["/images/projects/ecommerce-demo.png"],
   },
   {
+    slug: "3d-animation-site",
+    title: "3D Animation Website",
+    summary: "A Next.js site featuring 3D animation and visual effects.",
+    role: "Frontend developer",
+    stack: ["Next.js"],
+    category: "Next.js",
+    featured: false,
+    liveUrl: "https://fussy1.vercel.app/",
+    images: ["/images/projects/3d-animation-site.png"],
+  },
+  {
     slug: "onepac-plus",
     title: "OnePac Plus",
     summary:
@@ -212,16 +223,5 @@ export const projects: Project[] = [
     featured: false,
     liveUrl: "https://typit.netlify.app/",
     images: ["/images/projects/typing-speed.png"],
-  },
-  {
-    slug: "3d-animation-site",
-    title: "3D Animation Website",
-    summary: "A 3D animation/visual experiment site.",
-    role: "Developer",
-    stack: ["JavaScript"],
-    category: "Experiment",
-    featured: false,
-    liveUrl: "https://fussy1.vercel.app/",
-    images: ["/images/projects/3d-animation-site.png"],
   },
 ];

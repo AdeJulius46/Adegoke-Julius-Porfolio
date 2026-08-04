@@ -21,6 +21,7 @@ export interface SiteContent {
   tagline: string;
   techLine: string[];
   badge: string;
+  badgeUrl: string;
   location: string;
   email: string;
   phoneDisplay: string;
@@ -49,6 +50,8 @@ export const site: SiteContent = {
     "I build complete web applications — from responsive React interfaces to the APIs, databases, and business logic behind them.",
   techLine: ["Next.js", "TypeScript", "Node", "PHP", "PostgreSQL"],
   badge: "NASA Space Apps regional winner",
+  badgeUrl:
+    "https://www.linkedin.com/posts/adegoke-julius_nasaspaceapps-innovation-hackathon-activity-7381793986018963456-nnPq",
   location: "Lagos, Nigeria",
   email: "adegokejulius46@gmail.com",
   phoneDisplay: "0810 430 3528",

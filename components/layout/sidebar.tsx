@@ -47,13 +47,15 @@ export function Sidebar() {
           type="button"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
+          aria-label={expanded ? "Hide contacts" : "Show contacts"}
           className="bg-[var(--border-gradient-onyx)] text-accent-yellow shadow-[var(--shadow-2)] absolute -top-4 -right-4 flex items-center gap-1 rounded-bl-[15px] rounded-tr-[15px] px-2.5 py-2 text-[13px] transition-colors hover:bg-[var(--bg-gradient-yellow-1)] sm:-top-7.5 sm:-right-7.5 sm:px-4 sm:py-2.5 xl:hidden"
         >
-          <span className="hidden text-[length:var(--fs-8)] sm:inline">
+          <span aria-hidden="true" className="hidden text-[length:var(--fs-8)] sm:inline">
             {expanded ? "Hide Contacts" : "Show Contacts"}
           </span>
           <ChevronDown
             size={16}
+            aria-hidden="true"
             className={`transition-transform sm:hidden ${expanded ? "rotate-180" : ""}`}
           />
         </button>

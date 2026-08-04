@@ -43,10 +43,10 @@ export function ProjectFilterGrid() {
             role="tab"
             aria-selected={active === filter.value}
             onClick={() => setActive(filter.value)}
-            className={`rounded-full px-3.5 py-1.5 text-[length:var(--fs-6)] transition-colors ${
+            className={`rounded-full border px-3.5 py-1.5 text-[length:var(--fs-6)] transition-colors ${
               active === filter.value
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted text-light-gray hover:text-light-gray-70"
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-muted text-light-gray hover:text-light-gray-70 border-border"
             }`}
           >
             {filter.label}

@@ -26,7 +26,7 @@ export function Navbar() {
                 aria-current={active ? "page" : undefined}
                 className={`block px-1.5 py-5 text-[length:var(--fs-8)] transition-colors sm:text-[14px] xl:text-[15px] xl:font-medium ${
                   active
-                    ? "text-primary"
+                    ? "text-vegas-gold"
                     : "text-light-gray hover:text-light-gray-70"
                 }`}
               >

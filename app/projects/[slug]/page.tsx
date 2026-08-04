@@ -24,9 +24,20 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return {};
 
+  const title = `${project.title} — Adegoke Julius`;
+  const description = project.summary;
+
   return {
-    title: `${project.title} — Adegoke Julius`,
-    description: project.summary,
+    title,
+    description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/projects/${project.slug}`,
+      images: [project.images[0]],
+    },
+    twitter: { title, description, images: [project.images[0]] },
   };
 }
 

@@ -10,6 +10,10 @@ export interface BlogPost {
 /**
  * Only real, working Medium posts — the original site's lorem-ipsum
  * placeholder entries (blog-4/5/6, all `#` links) are dropped entirely.
+ *
+ * Banner images are self-hosted copies of the posts' Medium cover images
+ * (public/images/blog/), not hotlinked from miro.medium.com — hotlinking
+ * pulled in third-party cookies that tripped Lighthouse best-practices.
  */
 export const blogPosts: BlogPost[] = [
   {
@@ -19,8 +23,7 @@ export const blogPosts: BlogPost[] = [
     date: "July 29, 2022",
     excerpt:
       "It can be difficult to study JavaScript on your own. I had trouble deciding which course to take and how long it would take me to get up to speed.",
-    bannerImage:
-      "https://miro.medium.com/max/1400/1*bxEkHw1xewxOFjmGunb-Cw.webp",
+    bannerImage: "/images/blog/javascript-beginner.webp",
   },
   {
     title: "A Summary of My Experience at Ingenii Fellowship",
@@ -29,8 +32,7 @@ export const blogPosts: BlogPost[] = [
     date: "October 23, 2022",
     excerpt:
       "I was overjoyed to learn that I had been accepted into the fellowship and would be called the following day for a 10-minute interview, after applying to many fellowships without hearing back.",
-    bannerImage:
-      "https://miro.medium.com/max/720/1*huhh1130EYvULSTsWEWVOQ.webp",
+    bannerImage: "/images/blog/ingenii-fellowship.webp",
   },
   {
     title: "Don't Just Set Goals. Build Systems",
@@ -39,6 +41,6 @@ export const blogPosts: BlogPost[] = [
     date: "December 21, 2022",
     excerpt:
       "Insanity is doing the same thing over and over and expecting different results.",
-    bannerImage: "https://miro.medium.com/max/720/0*Nz897vaKH2yJhSQJ",
+    bannerImage: "/images/blog/build-systems.png",
   },
 ];

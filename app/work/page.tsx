@@ -4,10 +4,16 @@ import { SelectedWork } from "@/components/work/selected-work";
 import { ProjectFilterGrid } from "@/components/work/project-filter-grid";
 import { ExperimentsSection } from "@/components/work/experiments-section";
 
+const title = "Work — Adegoke Julius";
+const description =
+  "Fullstack projects by Adegoke Julius, including STAX (a Next.js mini-ERP) and a job posting platform, plus Next.js and WordPress work.";
+
 export const metadata: Metadata = {
-  title: "Work — Adegoke Julius",
-  description:
-    "Fullstack projects by Adegoke Julius, including STAX (a Next.js mini-ERP) and a job posting platform, plus Next.js and WordPress work.",
+  title,
+  description,
+  alternates: { canonical: "/work" },
+  openGraph: { title, description, url: "/work" },
+  twitter: { title, description },
 };
 
 export default function WorkPage() {
