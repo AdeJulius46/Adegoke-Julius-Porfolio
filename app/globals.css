@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Design tokens mirror content/theme.ts, which is the source of truth —
+ * extracted verbatim from legacy-site/assets/css/style.css. Keep the two
+ * in sync if either changes.
+ */
+
+@theme inline {
+  /* breakpoints — non-standard, preserved from the original site */
+  --breakpoint-xs: 28.125rem; /* 450px */
+  --breakpoint-sm: 36.25rem; /* 580px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 78.125rem; /* 1250px */
+
+  --font-sans: var(--font-poppins);
+  --font-mono: ui-monospace, monospace;
+
+  /* shadcn semantic tokens, mapped onto the original palette */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* raw original tokens, exposed as Tailwind utilities (bg-jet, text-light-gray, etc.) */
+  --color-jet: var(--jet);
+  --color-onyx: var(--onyx);
+  --color-eerie-black-1: var(--eerie-black-1);
+  --color-eerie-black-2: var(--eerie-black-2);
+  --color-smoky-black: var(--smoky-black);
+  --color-white-1: var(--white-1);
+  --color-white-2: var(--white-2);
+  --color-accent-yellow: var(--orange-yellow-crayola);
+  --color-vegas-gold: var(--vegas-gold);
+  --color-light-gray: var(--light-gray);
+  --color-light-gray-70: var(--light-gray-70);
+  --color-bittersweet-shimmer: var(--bittersweet-shimmer);
+
+  /* bespoke radius utilities (rounded-sidebar, rounded-content-card, ...) */
+  --radius-sidebar: 20px;
+  --radius-content-card: 14px;
+  --radius-project-img: 16px;
+  --radius-icon-box: var(--icon-box-radius);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  /* light mode = the original site's `.white` override */
+  --jet: hsl(0, 0%, 22%);
+  --onyx: hsl(240, 25%, 94%);
+  --eerie-black-1: hsl(240, 43%, 97%);
+  --eerie-black-2: hsl(240, 25%, 94%);
+  --smoky-black: hsl(0, 0%, 100%);
+  --white-1: hsl(0, 0%, 5%);
+  --white-2: hsl(0, 20%, 3%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --vegas-gold: hsl(30, 8%, 5%);
+  --light-gray: hsl(0, 85%, 5%);
+  --light-gray-70: hsla(0, 3%, 6%, 0.7);
+  --bittersweet-shimmer: hsl(0, 9%, 18%);
+
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 38%, 94%) 3%, hsl(0, 52%, 94%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 13%, 82%, 0.251) 0%, hsla(197, 33%, 96%, 0.96) 100%), hsl(240, 12%, 97%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsl(0, 52%, 94%) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsl(40, 33%, 98%) 59.86%), hsl(0, 52%, 94%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsl(0, 52%, 94%) 50%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+
+  --shadow-1: -4px 8px 24px hsla(0, 15%, 91%, 0.994);
+  --shadow-2: 0 16px 30px hsla(0, 100%, 99%, 0.919);
+  --shadow-3: 0 16px 40px hsla(0, 50%, 98%, 0.775);
+  --shadow-4: 0 25px 50px hsla(0, 14%, 88%, 0.876);
+  --shadow-5: 0 24px 80px hsla(0, 39%, 94%, 0.25);
+
+  --icon-box-radius: 8px;
+
+  --background: var(--smoky-black);
+  --foreground: var(--white-2);
+  --card: var(--eerie-black-2);
+  --card-foreground: var(--white-2);
+  --popover: var(--eerie-black-2);
+  --popover-foreground: var(--white-2);
+  --primary: var(--orange-yellow-crayola);
+  --primary-foreground: hsl(0, 0%, 7%);
+  --secondary: var(--jet);
+  --secondary-foreground: var(--white-2);
+  --muted: var(--onyx);
+  --muted-foreground: var(--light-gray-70);
+  --accent: var(--onyx);
+  --accent-foreground: var(--orange-yellow-crayola);
+  --destructive: var(--bittersweet-shimmer);
+  --destructive-foreground: var(--white-2);
+  --border: var(--jet);
+  --input: var(--jet);
+  --ring: var(--orange-yellow-crayola);
+  --radius: 0.875rem; /* 14px, matches original buttons/inputs */
+}
+
+.dark {
+  /* dark mode = the original site's default `:root` */
+  --jet: hsl(0, 0%, 22%);
+  --onyx: hsl(240, 1%, 17%);
+  --eerie-black-1: hsl(240, 2%, 13%);
+  --eerie-black-2: hsl(240, 2%, 12%);
+  --smoky-black: hsl(0, 0%, 7%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 98%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --vegas-gold: hsl(45, 54%, 58%);
+  --light-gray: hsl(0, 0%, 84%);
+  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --bittersweet-shimmer: hsl(0, 43%, 51%);
+
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+
+  --icon-box-radius: 8px;
+
+  --background: var(--smoky-black);
+  --foreground: var(--white-2);
+  --card: var(--eerie-black-2);
+  --card-foreground: var(--white-2);
+  --popover: var(--eerie-black-2);
+  --popover-foreground: var(--white-2);
+  --primary: var(--orange-yellow-crayola);
+  --primary-foreground: hsl(0, 0%, 7%);
+  --secondary: var(--jet);
+  --secondary-foreground: var(--white-2);
+  --muted: var(--onyx);
+  --muted-foreground: var(--light-gray-70);
+  --accent: var(--onyx);
+  --accent-foreground: var(--orange-yellow-crayola);
+  --destructive: var(--bittersweet-shimmer);
+  --destructive-foreground: var(--white-2);
+  --border: var(--jet);
+  --input: var(--jet);
+  --ring: var(--orange-yellow-crayola);
+  --radius: 0.875rem;
+}
+
+/* transitions, carried over verbatim */
+:root,
+.dark {
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+}
+
+/* fs-1..8 step up at the original's 580px breakpoint (mode-agnostic) */
+:root,
+.dark {
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+}
+
+@media (width >= 36.25rem) {
+  :root,
+  .dark {
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 26px;
+    --fs-4: 18px;
+    --fs-6: 15px;
+    --fs-7: 15px;
+    --fs-8: 12px;
+  }
+
+  :root,
+  .dark {
+    --icon-box-radius: 12px;
+  }
+}
+
+/* shadow-1/2/3 soften further at the original's 1024px breakpoint */
+@media (width >= 64rem) {
+  :root,
+  .dark {
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  ::selection {
+    background: var(--orange-yellow-crayola);
+    color: hsl(0, 0%, 7%);
+  }
+  :focus-visible {
+    outline-color: var(--orange-yellow-crayola);
+  }
+}
