@@ -189,6 +189,30 @@ export const projects: Project[] = [
     liveUrl: "https://ogbomosorecreationclub.com.ng/",
     images: ["/images/projects/ogbomoso-recreation-club.png"],
   },
+  {
+    slug: "isc2028",
+    title: "ISC 2028",
+    summary:
+      "A WordPress site for the Sillage Conference, an international conference held in Nigeria.",
+    role: "WordPress developer",
+    stack: ["WordPress"],
+    category: "WordPress",
+    featured: false,
+    liveUrl: "https://isc2028.ng/",
+    images: ["/images/projects/isc2028.png"],
+  },
+  {
+    slug: "hope-rising-ministry",
+    title: "Hope Rising Ministry",
+    summary:
+      "A WordPress site for Hope Rising Ministry, an organization focused on children's welfare.",
+    role: "WordPress developer",
+    stack: ["WordPress"],
+    category: "WordPress",
+    featured: false,
+    liveUrl: "https://hoperisingministry.org/",
+    images: ["/images/projects/hope-rising-ministry.png"],
+  },
 
   // --- Experiments (de-emphasized) ---
   {
