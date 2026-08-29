@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Lock } from "lucide-react";
+import { ArrowLeft, ExternalLink, Lock, PlayCircle } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { GithubIcon } from "@/components/icons/social-icons";
 
@@ -61,6 +61,17 @@ export function ProjectDetail({ project }: { project: Project }) {
             <Lock size={15} />
             Private repository
           </span>
+        )}
+        {project.videoUrl && (
+          <a
+            href={project.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-border text-light-gray hover:text-light-gray-70 inline-flex items-center gap-2 rounded-full border px-4 py-2"
+          >
+            <PlayCircle size={15} />
+            Watch demo
+          </a>
         )}
       </div>
 

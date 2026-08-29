@@ -19,6 +19,8 @@ export interface Project {
   githubUrl?: string;
   /** True when a GitHub repo exists but is private — show a label, not a dead link. */
   githubPrivate?: boolean;
+  /** Optional demo/walkthrough video (e.g. YouTube). */
+  videoUrl?: string;
   images: string[];
 }
 
@@ -31,6 +33,24 @@ export const TODO_CONFIRM_TITLE = "9ijaKids Pulse";
 
 export const projects: Project[] = [
   // --- Featured fullstack apps ---
+  {
+    slug: "ai-interview-prep",
+    title: "AI Interview Prep",
+    summary:
+      "Practice behavioral interviews with a live AI avatar interviewer, then get your STAR-format answers scored by Claude.",
+    problem:
+      "Job seekers rarely get realistic, structured practice for behavioral interviews — AI Interview Prep runs a live, timed interview with an AI avatar and turns the transcript into scored STAR-format feedback.",
+    architecture:
+      "The frontend is Next.js, talking to a NestJS API with Prisma for data access. Anam powers the live AI avatar interviewer — driving the on-screen interviewer, asking questions, and capturing a live transcript in real time. After the session, the transcript is sent to Claude, which scores each answer against the STAR (Situation, Task, Action, Result) framework and returns structured feedback.",
+    role: "Sole developer",
+    stack: ["Next.js", "NestJS", "Prisma", "Anam", "Claude"],
+    category: "Fullstack",
+    featured: true,
+    liveUrl: "https://ai-interview-prep-web.vercel.app",
+    githubUrl: "https://github.com/AdeJulius46/Ai-interview-prep",
+    videoUrl: "https://www.youtube.com/watch?v=65fUWnqoOrc",
+    images: ["/images/projects/ai-interview-prep.png"],
+  },
   {
     slug: "stax",
     title: "STAX",
@@ -56,6 +76,38 @@ export const projects: Project[] = [
     liveUrl: "https://stax-management-software.vercel.app/login",
     githubPrivate: true,
     images: ["/images/projects/stax.png"],
+  },
+  {
+    slug: "kitcheck",
+    title: "Kitcheck",
+    summary:
+      "A restaurant management platform for multi-branch operations — orders, kitchen workflow, inventory, tables, and staff in one dashboard.",
+    problem:
+      "A restaurant client running multiple branches needed one system to track orders through the kitchen, manage inventory and tables per branch, and keep staff and customer records centralized, rather than juggling per-branch tools.",
+    architecture:
+      "Kitcheck is a Next.js dashboard application with TypeScript, using Prisma and PostgreSQL to model branches, orders, kitchen status, inventory, tables, staff, and customers as related tables — so a branch switch (via the branch selector) scopes the whole dashboard to that location's data. The kitchen view tracks each order through New → Preparing → Ready → Completed states in real time.",
+    role: "Sole developer",
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    category: "Fullstack",
+    featured: true,
+    githubPrivate: true,
+    images: ["/images/projects/kitcheck.png"],
+  },
+  {
+    slug: "afloria",
+    title: "Afloria",
+    summary:
+      "A wedding planning platform connecting couples with vendors — guest management, budgeting, RSVPs, and a wedding website builder.",
+    problem:
+      "Planning a wedding means coordinating guests, a budget, and vendors (photographers, event planners, and more) across disconnected tools. Afloria brings guest management, vendor discovery, budgeting, and a countdown-driven planning dashboard into one place.",
+    architecture:
+      "Afloria is a Next.js application with TypeScript, using Prisma and PostgreSQL to model couples, guest lists, vendors, bookings, and budget line items. The planning dashboard aggregates RSVP status and budget-utilization charts per couple, alongside a vendor marketplace for discovering and messaging photographers, planners, and other wedding vendors, and a built-in wedding website builder.",
+    role: "Sole developer",
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    category: "Fullstack",
+    featured: true,
+    githubPrivate: true,
+    images: ["/images/projects/afloria.png"],
   },
   {
     slug: "job-posting-platform",

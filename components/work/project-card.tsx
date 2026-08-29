@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Lock } from "lucide-react";
+import { ExternalLink, Lock, PlayCircle } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { GithubIcon } from "@/components/icons/social-icons";
 
@@ -86,6 +86,17 @@ export function ProjectCard({
               <Lock size={13} />
               Private repository
             </span>
+          )}
+          {project.videoUrl && (
+            <a
+              href={project.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-light-gray-70 hover:text-light-gray inline-flex items-center gap-1.5"
+            >
+              <PlayCircle size={14} />
+              Demo
+            </a>
           )}
         </div>
       </div>
