@@ -38,10 +38,10 @@ export interface SiteContent {
 }
 
 /**
- * A GitHub/LinkedIn handle wasn't available from the owner at content-authoring
- * time. Grep this constant to find where to add one later.
+ * A LinkedIn profile handle wasn't available from the owner at
+ * content-authoring time. Grep this constant to find where to add one later.
  */
-export const TODO_ADD_SOCIAL = "GitHub/LinkedIn handle not yet provided";
+export const TODO_ADD_SOCIAL = "LinkedIn handle not yet provided";
 
 export const site: SiteContent = {
   name: "Adegoke Julius",
@@ -72,6 +72,11 @@ export const site: SiteContent = {
       label: "Twitter",
       href: "https://twitter.com/AdegokeJulius7",
       icon: "twitter",
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/AdeJulius46",
+      icon: "github",
     },
   ],
   nav: [
