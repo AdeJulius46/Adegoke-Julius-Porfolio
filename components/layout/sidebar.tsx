@@ -4,13 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, Mail, MapPin } from "lucide-react";
 import { site } from "@/content/site";
-import { FacebookIcon, GithubIcon, XIcon } from "@/components/icons/social-icons";
+import { GithubIcon, LinkedinIcon, XIcon } from "@/components/icons/social-icons";
 
 const socialIcon = {
-  facebook: FacebookIcon,
   twitter: XIcon,
   github: GithubIcon,
-  linkedin: null,
+  linkedin: LinkedinIcon,
 } as const;
 
 export function Sidebar() {
